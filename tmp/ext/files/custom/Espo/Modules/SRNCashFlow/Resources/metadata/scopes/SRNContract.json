@@ -1,0 +1,12 @@
+{
+  "entity": true,
+  "object": true,
+  "layouts": true,
+  "customizable": true,
+  "acl": true,
+  "importable": true,
+  "label": "Contratos",
+  "controller": "Record",
+  "iconClass": "fas fa-file-contract",
+  "type": "Base"
+}

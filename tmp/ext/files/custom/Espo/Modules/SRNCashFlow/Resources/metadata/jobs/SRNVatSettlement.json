@@ -1,0 +1,7 @@
+{
+  "name": "SRN VAT Settlement",
+  "job": "Espo\\Modules\\SRNCashFlow\\Jobs\\SRNVatSettlement",
+  "scheduling": "0 6 20 * *",
+  "status": "Active",
+  "isInternal": false
+}

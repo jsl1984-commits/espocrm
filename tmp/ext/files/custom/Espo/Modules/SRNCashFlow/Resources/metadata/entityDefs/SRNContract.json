@@ -1,0 +1,50 @@
+{
+  "table": "srn_contract",
+  "fields": {
+    "name": { "type": "varchar", "required": true, "len": 255 },
+    "company1Id": { "type": "foreignId" },
+    "company2Id": { "type": "foreignId" },
+    "contact1Id": { "type": "foreignId" },
+    "contact2Id": { "type": "foreignId" },
+    "startDate": { "type": "date", "required": true },
+    "expirationDate": { "type": "date" },
+    "renewalDate": { "type": "date" },
+    "signatureDate": { "type": "date" },
+    "noticeDate": { "type": "date" },
+    "paymentTerms": { "type": "enum", "options": ["Contado","30","45","60","Custom"] },
+    "billingCycleType": { "type": "enum", "options": ["Mes calendario","Mes continuo","Proporcional inicial + mes calendario"] },
+    "settlementType": { "type": "enum", "options": ["Mes vencido","Mes por vencer"] },
+    "customPaymentDays": { "type": "int" },
+    "usesFactoring": { "type": "bool", "default": false },
+    "factoringDate": { "type": "date" },
+    "reminderEmails": { "type": "array" },
+    "reminderIntervals": { "type": "array", "default": [4,3,2,1] },
+    "reminderStagesSent": { "type": "array" },
+    "sendReminders": { "type": "bool", "default": true },
+    "documentation": { "type": "array" },
+    "penalties": { "type": "varchar" },
+    "penaltyAmount": { "type": "currency" },
+    "penaltyReason": { "type": "varchar" },
+    "observations": { "type": "text" },
+    "status": { "type": "enum", "options": ["Borrador","Activo","Suspendido","Finalizado","Rescindido","Expirado"], "default": "Borrador" },
+    "contractType": { "type": "enum", "options": ["Venta","Compra","Interno","Indefinido"], "default": "Indefinido" },
+    "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
+    "monthsForward": { "type": "int", "default": 12 }
+  },
+  "links": {
+    "company1": { "type": "belongsTo", "entity": "Account", "foreignKey": "company1Id" },
+    "company2": { "type": "belongsTo", "entity": "Account", "foreignKey": "company2Id" },
+    "contact1": { "type": "belongsTo", "entity": "Contact", "foreignKey": "contact1Id" },
+    "contact2": { "type": "belongsTo", "entity": "Contact", "foreignKey": "contact2Id" }
+  },
+  "indexes": {
+    "IDX_COMPANY1": { "columns": ["company1Id"] },
+    "IDX_COMPANY2": { "columns": ["company2Id"] },
+    "IDX_CONTACT1": { "columns": ["contact1Id"] },
+    "IDX_CONTACT2": { "columns": ["contact2Id"] },
+    "IDX_STATUS": { "columns": ["status"] },
+    "IDX_EXPIRATION": { "columns": ["expirationDate"] },
+    "IDX_STATUS_SEND_EXP": { "columns": ["status", "sendReminders", "expirationDate"] }
+  }
+}

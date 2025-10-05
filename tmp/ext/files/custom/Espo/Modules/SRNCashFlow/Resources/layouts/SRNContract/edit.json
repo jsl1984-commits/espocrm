@@ -1,0 +1,19 @@
+[
+  { "name": "name" },
+  { "name": "status" },
+  { "name": "contractType", "readOnly": true },
+  { "name": "startDate" },
+  { "name": "expirationDate" },
+  { "name": "company1" },
+  { "name": "contact1" },
+  { "name": "company2" },
+  { "name": "contact2" },
+  { "name": "monthsForward" },
+  { "name": "paymentTerms" },
+  { "name": "billingCycleType" },
+  { "name": "settlementType" },
+  { "name": "customPaymentDays" },
+  { "name": "usesFactoring" },
+  { "name": "factoringDate" },
+  { "name": "observations" }
+]

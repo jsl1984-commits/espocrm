@@ -1,0 +1,19 @@
+{
+  "table": "srn_salary",
+  "fields": {
+    "employeeId": { "type": "foreignId", "required": true },
+    "netAmount": { "type": "currency", "required": true },
+    "monthsForward": { "type": "int", "default": 12 },
+    "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
+    "startMonth": { "type": "date" },
+    "retentionPercent": { "type": "float", "default": 35 }
+  },
+  "links": {
+    "employee": { "type": "belongsTo", "entity": "SRNEmployee", "foreignKey": "employeeId" },
+    "movements": { "type": "hasMany", "entity": "SRNFinancialMovement", "foreign": "salary" }
+  },
+  "indexes": {
+    "IDX_EMPLOYEE": { "columns": ["employeeId"] }
+  }
+}

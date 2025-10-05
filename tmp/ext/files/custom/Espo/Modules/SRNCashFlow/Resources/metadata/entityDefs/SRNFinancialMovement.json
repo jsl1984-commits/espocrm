@@ -1,0 +1,50 @@
+{
+  "table": "srn_financial_movement",
+  "fields": {
+    "contractId": { "type": "foreignId" },
+    "salaryId": { "type": "foreignId" },
+    "taxId": { "type": "foreignId" },
+    "movementType": {
+      "type": "enum",
+      "options": [
+        "Expense:Invoice:VAT19",
+        "Expense:Invoice:Exempt",
+        "Expense:Honorarium:14.5",
+        "Expense:Invoice:NoVAT",
+        "Expense:Salary:Previsional",
+        "Expense:TaxSettle",
+        "Income:TaxSettle",
+        "Expense:CreditNote:VAT19",
+        "Expense:CreditNote:Exempt",
+        "Income:Invoice:VAT19",
+        "Income:Invoice:Exempt",
+        "Income:DebitNote:VAT19",
+        "Income:DebitNote:Exempt",
+        "Absence"
+      ],
+      "required": true
+    },
+    "amountNet": { "type": "currency", "required": true },
+    "amountTax": { "type": "currency" },
+    "amountGross": { "type": "currency" },
+    "rate": { "type": "float" },
+    "vatImpactNextMonth": { "type": "bool", "default": false },
+    "dueDate": { "type": "date" },
+    "period": { "type": "varchar" },
+    "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
+    "status": { "type": "enum", "options": ["Draft","Confirmed","Paid"], "default": "Draft" },
+    "reason": { "type": "varchar" }
+  },
+  "links": {
+    "contract": { "type": "belongsTo", "entity": "SRNContract", "foreignKey": "contractId" },
+    "salary": { "type": "belongsTo", "entity": "SRNSalary", "foreignKey": "salaryId" },
+    "financialTax": { "type": "belongsTo", "entity": "SRNFinancialTax", "foreignKey": "taxId" }
+  },
+  "indexes": {
+    "IDX_CONTRACT": { "columns": ["contractId"] },
+    "IDX_SALARY": { "columns": ["salaryId"] },
+    "IDX_TAX": { "columns": ["taxId"] },
+    "IDX_STATUS": { "columns": ["status"] }
+  }
+}

@@ -1,0 +1,6 @@
+[
+  { "name": "status", "type": "enum" },
+  { "name": "movementType", "type": "enum" },
+  { "name": "environment", "type": "enum" },
+  { "name": "scenario", "type": "enum" }
+]
