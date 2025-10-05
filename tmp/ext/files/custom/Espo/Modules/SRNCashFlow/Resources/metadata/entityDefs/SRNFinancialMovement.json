@@ -3,7 +3,7 @@
   "fields": {
     "contractId": { "type": "foreignId" },
     "salaryId": { "type": "foreignId" },
-    "employeeId": { "type": "foreignId" },
+    "taxId": { "type": "foreignId" },
     "movementType": {
       "type": "enum",
       "options": [
@@ -38,12 +38,12 @@
   "links": {
     "contract": { "type": "belongsTo", "entity": "SRNContract", "foreignKey": "contractId" },
     "salary": { "type": "belongsTo", "entity": "SRNSalary", "foreignKey": "salaryId" },
-    "employee": { "type": "belongsTo", "entity": "SRNEmployee", "foreignKey": "employeeId" }
+    "tax": { "type": "belongsTo", "entity": "SRNTax", "foreignKey": "taxId" }
   },
   "indexes": {
     "IDX_CONTRACT": { "columns": ["contractId"] },
     "IDX_SALARY": { "columns": ["salaryId"] },
-    "IDX_EMPLOYEE": { "columns": ["employeeId"] },
+    "IDX_TAX": { "columns": ["taxId"] },
     "IDX_STATUS": { "columns": ["status"] }
   }
 }
