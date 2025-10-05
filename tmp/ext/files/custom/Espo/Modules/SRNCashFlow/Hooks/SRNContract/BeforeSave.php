@@ -33,5 +33,31 @@ class BeforeSave implements BeforeSaveHook
         } else {
             $entity->set('contractType', 'Indefinido');
         }
+
+        // Validate contacts belong to corresponding companies when possible.
+        $contact1Id = $entity->get('contact1Id');
+        $contact2Id = $entity->get('contact2Id');
+
+        if ($contact1Id && $entity->get('company1Id')) {
+            $contact1 = $em->getEntity('Contact', $contact1Id);
+            if ($contact1 && $contact1->has('accountId')) {
+                $primaryAccountId = $contact1->get('accountId');
+                if ($primaryAccountId && $primaryAccountId !== $entity->get('company1Id')) {
+                    $entity->set('contact1Id', null);
+                    $entity->set('contact1Name', null);
+                }
+            }
+        }
+
+        if ($contact2Id && $entity->get('company2Id')) {
+            $contact2 = $em->getEntity('Contact', $contact2Id);
+            if ($contact2 && $contact2->has('accountId')) {
+                $primaryAccountId = $contact2->get('accountId');
+                if ($primaryAccountId && $primaryAccountId !== $entity->get('company2Id')) {
+                    $entity->set('contact2Id', null);
+                    $entity->set('contact2Name', null);
+                }
+            }
+        }
     }
 }
