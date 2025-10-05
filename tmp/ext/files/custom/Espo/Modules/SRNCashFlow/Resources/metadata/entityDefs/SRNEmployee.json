@@ -4,7 +4,8 @@
     "firstName": { "type": "varchar", "required": true, "len": 100 },
     "lastName": { "type": "varchar", "required": true, "len": 100 },
     "hireDate": { "type": "date", "required": true },
-    "status": { "type": "enum", "options": ["Activo","Inactivo"], "default": "Activo" }
+    "status": { "type": "enum", "options": ["Activo","Inactivo"], "default": "Activo" },
+    "salaryPaymentDay": { "type": "enumInt", "options": [5,10,15,30], "default": 30 }
   },
   "links": {
     "salaries": { "type": "hasMany", "entity": "SRNSalary", "foreign": "employee" },

@@ -2,5 +2,6 @@
   { "name": "firstName" },
   { "name": "lastName" },
   { "name": "hireDate" },
-  { "name": "status" }
+  { "name": "status" },
+  { "name": "salaryPaymentDay" }
 ]

@@ -4,5 +4,6 @@
   { "name": "monthsForward" },
   { "name": "scenario" },
   { "name": "environment" },
-  { "name": "startMonth" }
+  { "name": "startMonth" },
+  { "name": "retentionPercent" }
 ]

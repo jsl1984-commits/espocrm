@@ -13,6 +13,7 @@
         "Expense:Invoice:NoVAT",
         "Expense:Salary:Previsional",
         "Expense:TaxSettle",
+        "Income:TaxSettle",
         "Expense:CreditNote:VAT19",
         "Expense:CreditNote:Exempt",
         "Income:Invoice:VAT19",
@@ -38,7 +39,7 @@
   "links": {
     "contract": { "type": "belongsTo", "entity": "SRNContract", "foreignKey": "contractId" },
     "salary": { "type": "belongsTo", "entity": "SRNSalary", "foreignKey": "salaryId" },
-    "tax": { "type": "belongsTo", "entity": "SRNTax", "foreignKey": "taxId" }
+    "financialTax": { "type": "belongsTo", "entity": "SRNFinancialTax", "foreignKey": "taxId" }
   },
   "indexes": {
     "IDX_CONTRACT": { "columns": ["contractId"] },

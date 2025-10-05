@@ -7,5 +7,6 @@
   "importable": true,
   "label": "Sueldos",
   "controller": "Record",
-  "iconClass": "fas fa-money-bill"
+  "iconClass": "fas fa-money-bill",
+  "hooksDisabled": false
 }

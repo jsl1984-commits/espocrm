@@ -46,6 +46,21 @@ class AfterInstall
                 ]);
                 $em->saveEntity($job);
             }
+            // Ensure SRNVatSettlement scheduled job exists.
+            $existingVat = $repo->where([
+                'job' => 'SRNVatSettlement'
+            ])->findOne();
+            if (!$existingVat) {
+                $job2 = $em->getEntity('ScheduledJob');
+                $job2->set([
+                    'name'       => 'SRN VAT Settlement',
+                    'job'        => 'SRNVatSettlement',
+                    'status'     => 'Active',
+                    'scheduling' => '0 6 20 * *',
+                    'isInternal' => false
+                ]);
+                $em->saveEntity($job2);
+            }
         } catch (\Throwable $e) {
             error_log('[SRNCashFlow][AfterInstall] No se pudo crear Scheduled Job: ' . $e->getMessage());
         }

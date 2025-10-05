@@ -6,7 +6,8 @@
     "monthsForward": { "type": "int", "default": 12 },
     "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
     "scenario": { "type": "enum", "options": ["Real","Conservative","Realistic","Optimistic"], "default": "Real" },
-    "startMonth": { "type": "date" }
+    "startMonth": { "type": "date" },
+    "retentionPercent": { "type": "float", "default": 35 }
   },
   "links": {
     "employee": { "type": "belongsTo", "entity": "SRNEmployee", "foreignKey": "employeeId" },
