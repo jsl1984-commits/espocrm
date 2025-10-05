@@ -7,5 +7,6 @@
   "importable": true,
   "label": "Contratos",
   "controller": "Record",
-  "iconClass": "fas fa-file-contract"
+  "iconClass": "fas fa-file-contract",
+  "type": "Base"
 }
