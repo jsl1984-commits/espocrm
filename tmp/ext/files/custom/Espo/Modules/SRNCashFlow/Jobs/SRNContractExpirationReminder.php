@@ -1,24 +1,25 @@
 <?php
 namespace Espo\Modules\SRNCashFlow\Jobs;
 
-use Espo\Core\Job\Base as BaseJob;
+use Espo\Core\Job\Job;
+use Espo\Core\Job\Job\Data;
+use Espo\Core\ServiceFactory;
 use Espo\Modules\SRNCashFlow\Services\ContractReminderService;
 
-class SRNContractExpirationReminder extends BaseJob
+class SRNContractExpirationReminder implements Job
 {
-    public function run($data = null)
+    public function __construct(private ServiceFactory $serviceFactory)
+    {}
+
+    public function run(Data $data): void
     {
         /** @var ContractReminderService $service */
-        $service = $this
-            ->getContainer()
-            ->get('serviceFactory')
-            ->create('SRNCashFlow:ContractReminder');
+        $service = $this->serviceFactory->create('SRNCashFlow:ContractReminder');
 
-        if (is_array($data) && isset($data['batchSize'])) {
-            $service->setBatchSize((int)$data['batchSize']);
+        if ($data->has('batchSize')) {
+            $service->setBatchSize((int) ($data->get('batchSize') ?? 0));
         }
 
         $service->run();
-        return true;
     }
 }
