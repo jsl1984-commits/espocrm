@@ -4,7 +4,7 @@
  */
 class BeforeInstall
 {
-    public function run($GLOBALS['container'])
+    public function run($container, array $params = [])
     {
         return true;
     }

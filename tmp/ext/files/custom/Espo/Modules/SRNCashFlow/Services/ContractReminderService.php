@@ -3,27 +3,23 @@ namespace Espo\Modules\SRNCashFlow\Services;
 
 use DateTimeImmutable;
 use DateTimeZone;
-use Espo\Core\Container;
+use Espo\Core\Utils\Config;
 use Espo\Core\Utils\Log;
 use Espo\ORM\EntityManager;
 use Espo\Modules\SRNCashFlow\Entities\SRNContract;
-use Espo\Core\Mail\Sender as MailSender;
+use Espo\Core\Mail\EmailSender;
+use Espo\Entities\Email;
 
 class ContractReminderService
 {
-    private EntityManager $em;
-    private MailSender $mailSender;
-    private Log $logger;
-    private $config;
     private int $batchSize = 200;
 
-    public function __construct(Container $GLOBALS['container'])
-    {
-        $this->em         = $GLOBALS['container']->get('entityManager');
-        $this->mailSender = $GLOBALS['container']->get('mailSender');
-        $this->logger     = $GLOBALS['container']->get('logger');
-        $this->config     = $GLOBALS['container']->get('config');
-    }
+    public function __construct(
+        private EntityManager $em,
+        private EmailSender $emailSender,
+        private Log $logger,
+        private Config $config,
+    ) {}
 
     public function setBatchSize(int $batchSize): self
     {
@@ -158,7 +154,16 @@ class ContractReminderService
 
         foreach ($emails as $to) {
             try {
-                $this->mailSender->send($from, $to, $subject, $body);
+                $email = $this->em->getNewEntity(Email::ENTITY_TYPE);
+                $email
+                    ->setFromAddress($from)
+                    ->setToAddressList([$to])
+                    ->setSubject($subject)
+                    ->setBodyPlain($body)
+                    ->setIsPlain(true);
+
+                $this->emailSender->send($email);
+
                 $this->logger->debug('[SRNCashFlow][Reminder] Enviado a ' . $to . ' contrato ' . $contract->getId() . ' stage=' . $stage);
             } catch (\Throwable $e) {
                 $this->logger->warning('[SRNCashFlow][Reminder] Falló envío a ' . $to . ' contrato ' . $contract->getId() . ': ' . $e->getMessage());

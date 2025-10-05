@@ -3,19 +3,23 @@
 namespace Espo\Modules\SRNCashFlow\Hooks\SRNContract;
 
 use Espo\ORM\Entity;
-use Espo\Core\Hook\Base;
+use Espo\ORM\EntityManager;
+use Espo\Core\Hook\Hook\BeforeSave as BeforeSaveHook;
+use Espo\ORM\Repository\Option\SaveOptions;
 
-class BeforeSave extends Base
+class BeforeSave implements BeforeSaveHook
 {
-    public function process(Entity $entity)
+    public function __construct(private EntityManager $entityManager) {}
+
+    public function beforeSave(Entity $entity, SaveOptions $options): void
     {
-        $em = $this->getEntityManager();
+        $em = $this->entityManager;
 
         $company1 = $entity->get('company1Id') ? $em->getEntity('Account', $entity->get('company1Id')) : null;
         $company2 = $entity->get('company2Id') ? $em->getEntity('Account', $entity->get('company2Id')) : null;
 
-        $isInternal1 = $company1 ? (bool)$company1->get('isInternal') : false;
-        $isInternal2 = $company2 ? (bool)$company2->get('isInternal') : false;
+        $isInternal1 = $company1 ? (bool) $company1->get('isInternal') : false;
+        $isInternal2 = $company2 ? (bool) $company2->get('isInternal') : false;
 
         if ($isInternal1 && !$isInternal2) {
             $entity->set('contractType', 'Venta');

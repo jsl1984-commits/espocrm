@@ -7,12 +7,12 @@
  */
 class AfterInstall
 {
-    public function run($GLOBALS['container'])
+    public function run($container, array $params = [])
     {
-        $dataManager = $GLOBALS['container']->get('dataManager');
+        $dataManager = $container->get('dataManager');
         $dataManager->rebuild();
 
-        $config   = $GLOBALS['container']->get('config');
+        $config   = $container->get('config');
         $defaults = [
             'srnReminderFrom'      => '',
             'srnDefaultScenario'   => 'Real',
@@ -30,16 +30,16 @@ class AfterInstall
         }
 
         try {
-            $em   = $GLOBALS['container']->get('entityManager');
+            $em   = $container->get('entityManager');
             $repo = $em->getRepository('ScheduledJob');
             $existing = $repo->where([
-                'job' => 'Espo\\Modules\\SRNCashFlow\\Jobs\\SRNContractExpirationReminder'
+                'job' => 'SRNContractExpirationReminder'
             ])->findOne();
             if (!$existing) {
                 $job = $em->getEntity('ScheduledJob');
                 $job->set([
                     'name'       => 'SRN Contract Expiration Reminder',
-                    'job'        => 'Espo\\Modules\\SRNCashFlow\\Jobs\\SRNContractExpirationReminder',
+                    'job'        => 'SRNContractExpirationReminder',
                     'status'     => 'Active',
                     'scheduling' => '0 7 * * *',
                     'isInternal' => false
