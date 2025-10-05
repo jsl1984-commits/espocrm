@@ -1,0 +1,11 @@
+{
+  "entity": true,
+  "object": true,
+  "layouts": true,
+  "customizable": true,
+  "acl": true,
+  "importable": true,
+  "label": "Sueldos",
+  "controller": "Record",
+  "iconClass": "fas fa-money-bill"
+}

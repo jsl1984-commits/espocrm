@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "isInternal": {
+      "type": "bool",
+      "default": false,
+      "label": "Empresa del holding"
+    }
+  }
+}

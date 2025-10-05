@@ -1,0 +1,4 @@
+[
+  { "name": "scenario", "type": "enum" },
+  { "name": "environment", "type": "enum" }
+]

@@ -1,0 +1,20 @@
+{
+  "fields": {
+    "srnReminderFrom": {
+      "type": "varchar",
+      "default": "",
+      "label": "Correo remitente recordatorios"
+    },
+    "srnDefaultScenario": {
+      "type": "enum",
+      "options": ["Real","Conservative","Realistic","Optimistic"],
+      "default": "Real",
+      "label": "Escenario por defecto"
+    },
+    "srnMaxReminderWindow": {
+      "type": "int",
+      "default": 6,
+      "label": "Ventana máx. meses recordatorios"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[
+  { "name": "firstName" },
+  { "name": "lastName" },
+  { "name": "hireDate" },
+  { "name": "status" }
+]

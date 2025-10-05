@@ -1,0 +1,8 @@
+{
+  "name": "SRNCashFlow",
+  "label": "SRN CashFlow Extension",
+  "description": "Gestión financiera multiempresa (SRN)",
+  "author": "SRN",
+  "version": "1.2.0",
+  "type": "extension"
+}

@@ -1,0 +1,6 @@
+[
+  { "name": "status", "type": "enum" },
+  { "name": "contractType", "type": "enum" },
+  { "name": "company1", "type": "link" },
+  { "name": "company2", "type": "link" }
+]
