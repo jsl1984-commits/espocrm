@@ -28,6 +28,8 @@
     "observations": { "type": "text" },
     "status": { "type": "enum", "options": ["Borrador","Activo","Suspendido","Finalizado","Rescindido","Expirado"], "default": "Borrador" },
     "contractType": { "type": "enum", "options": ["Venta","Compra","Interno","Indefinido"], "default": "Indefinido" },
+    "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
     "monthsForward": { "type": "int", "default": 12 }
   },
   "links": {

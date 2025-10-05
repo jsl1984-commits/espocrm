@@ -32,7 +32,7 @@
     "dueDate": { "type": "date" },
     "period": { "type": "varchar" },
     "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
-    "scenario": { "type": "enum", "options": ["Real","Conservative","Realistic","Optimistic","Pessimistic"], "default": "Real" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
     "status": { "type": "enum", "options": ["Draft","Confirmed","Paid"], "default": "Draft" },
     "reason": { "type": "varchar" }
   },

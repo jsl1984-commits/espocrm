@@ -5,7 +5,7 @@
     "netAmount": { "type": "currency", "required": true },
     "monthsForward": { "type": "int", "default": 12 },
     "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
-    "scenario": { "type": "enum", "options": ["Real","Conservative","Realistic","Optimistic"], "default": "Real" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
     "startMonth": { "type": "date" },
     "retentionPercent": { "type": "float", "default": 35 }
   },

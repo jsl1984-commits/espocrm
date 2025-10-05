@@ -5,6 +5,8 @@
     "lastName": { "type": "varchar", "required": true, "len": 100 },
     "hireDate": { "type": "date", "required": true },
     "status": { "type": "enum", "options": ["Activo","Inactivo"], "default": "Activo" },
+    "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
+    "scenario": { "type": "enum", "options": ["Real","Optimista","Realista","Pesimista","clonado de produccion"], "default": "Real" },
     "salaryPaymentDay": { "type": "enumInt", "options": [5,10,15,30], "default": 30 }
   },
   "links": {
