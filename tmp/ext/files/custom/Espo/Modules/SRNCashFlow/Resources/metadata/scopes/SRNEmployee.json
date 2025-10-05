@@ -7,5 +7,6 @@
   "importable": true,
   "label": "Empleados",
   "controller": "Record",
-  "iconClass": "fas fa-user"
+  "iconClass": "fas fa-user",
+  "type": "Base"
 }
