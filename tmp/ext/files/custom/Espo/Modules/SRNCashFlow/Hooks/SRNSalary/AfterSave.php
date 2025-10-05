@@ -32,21 +32,25 @@ class AfterSave implements AfterSaveHook
         $payDay = (int) ($employee->get('salaryPaymentDay') ?? 30);
 
         $now = new DateTimeImmutable('first day of this month 00:00:00');
-        $due = $now->setDate((int)$now->format('Y'), (int)$now->format('m'), $payDay);
+        $months = max(1, (int) ($entity->get('monthsForward') ?? 12));
+        for ($i = 0; $i < $months; $i++) {
+            $base = $now->modify("+{$i} month");
+            $due = $base->setDate((int)$base->format('Y'), (int)$base->format('m'), $payDay);
 
-        $movement = $this->entityManager->getNewEntity('SRNFinancialMovement');
-        $movement->set([
-            'salaryId' => $entity->getId(),
-            'movementType' => 'Expense:Salary:Previsional',
-            'amountNet' => $netAmount,
-            'amountGross' => $netAmount,
-            'dueDate' => $due->format('Y-m-d'),
-            'environment' => $entity->get('environment') ?? 'Production',
-            'scenario' => $entity->get('scenario') ?? 'Real',
-            'status' => 'Draft',
-            'reason' => 'SRN Salary monthly payment'
-        ]);
-        $this->entityManager->saveEntity($movement);
+            $movement = $this->entityManager->getNewEntity('SRNFinancialMovement');
+            $movement->set([
+                'salaryId' => $entity->getId(),
+                'movementType' => 'Expense:Salary:Previsional',
+                'amountNet' => $netAmount,
+                'amountGross' => $netAmount,
+                'dueDate' => $due->format('Y-m-d'),
+                'environment' => $entity->get('environment') ?? 'Production',
+                'scenario' => $entity->get('scenario') ?? 'Real',
+                'status' => 'Draft',
+                'reason' => 'SRN Salary monthly payment'
+            ]);
+            $this->entityManager->saveEntity($movement);
+        }
 
         $retentionPercent = (float) ($entity->get('retentionPercent') ?? 35);
         if ($retentionPercent > 0) {

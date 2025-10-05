@@ -27,7 +27,8 @@
     "penaltyReason": { "type": "varchar" },
     "observations": { "type": "text" },
     "status": { "type": "enum", "options": ["Borrador","Activo","Suspendido","Finalizado","Rescindido","Expirado"], "default": "Borrador" },
-    "contractType": { "type": "enum", "options": ["Venta","Compra","Interno","Indefinido"], "default": "Indefinido" }
+    "contractType": { "type": "enum", "options": ["Venta","Compra","Interno","Indefinido"], "default": "Indefinido" },
+    "monthsForward": { "type": "int", "default": 12 }
   },
   "links": {
     "company1": { "type": "belongsTo", "entity": "Account", "foreignKey": "company1Id" },

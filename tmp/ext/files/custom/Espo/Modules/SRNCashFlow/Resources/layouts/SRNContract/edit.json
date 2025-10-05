@@ -8,6 +8,7 @@
   { "name": "contact1" },
   { "name": "company2" },
   { "name": "contact2" },
+  { "name": "monthsForward" },
   { "name": "paymentTerms" },
   { "name": "billingCycleType" },
   { "name": "settlementType" },

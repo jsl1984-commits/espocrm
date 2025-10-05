@@ -21,9 +21,12 @@ class BeforeSave implements BeforeSaveHook
         $isInternal1 = $company1 ? (bool) $company1->get('isInternal') : false;
         $isInternal2 = $company2 ? (bool) $company2->get('isInternal') : false;
 
+        // company1 provee, company2 recibe.
         if ($isInternal1 && !$isInternal2) {
+            // Proveedor holding -> ingreso
             $entity->set('contractType', 'Venta');
         } elseif (!$isInternal1 && $isInternal2) {
+            // Receptor holding -> egreso
             $entity->set('contractType', 'Compra');
         } elseif ($isInternal1 && $isInternal2) {
             $entity->set('contractType', 'Interno');

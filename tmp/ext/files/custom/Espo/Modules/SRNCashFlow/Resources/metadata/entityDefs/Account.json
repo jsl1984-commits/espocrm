@@ -1,0 +1,5 @@
+{
+  "fields": {
+    "isInternal": { "type": "bool", "default": false }
+  }
+}
