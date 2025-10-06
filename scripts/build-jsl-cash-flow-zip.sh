@@ -8,7 +8,7 @@ DESC="Cash Flow management (contracts, salaries, VAT)"
 TMP="data/tmp/${MODULE}-${VERSION}"
 rm -rf "$TMP" "$TMP.zip" || true
 mkdir -p "$TMP/Resources"
-cp -r application/Espo/Modules/JslCashFlow/Resources "$TMP/Resources"
+cp -r application/Espo/Modules/JslCashFlow/Resources/* "$TMP/Resources/"
 cp -r application/Espo/Modules/JslCashFlow/Controllers "$TMP/Controllers"
 cp -r application/Espo/Modules/JslCashFlow/Hooks "$TMP/Hooks"
 cp -r application/Espo/Modules/JslCashFlow/Jobs "$TMP/Jobs" 2>/dev/null || true
@@ -20,7 +20,12 @@ cat > "$TMP/manifest.json" <<JSON
   "description": "${DESC}",
   "acceptableVersions": [">=9.1.0"],
   "php": ">=8.1",
-  "database": {"mysql": ">=8.0"}
+  "database": {"mysql": ">=8.0"},
+  "customDirNames": {
+    "files": "",
+    "before": "scripts/beforeInstallFiles",
+    "after": "scripts/afterInstallFiles"
+  }
 }
 JSON
 (cd data/tmp && zip -r "${MODULE}-${VERSION}.zip" "${MODULE}-${VERSION}")

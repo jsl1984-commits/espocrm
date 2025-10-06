@@ -3,14 +3,10 @@
   "recordViews": {"detail": "views/record/detail", "edit": "views/record/edit"},
   "relationshipPanels": {
     "providerContact": {
-      "selectHandler": "handlers/select-related/same-account",
-      "selectPrimaryFilterName": null,
-      "selectBoolFilterList": null
+      "selectHandler": "jsl-cash-flow:handlers/select-related/same-company"
     },
     "clientContact": {
-      "selectHandler": "handlers/select-related/same-account",
-      "selectPrimaryFilterName": null,
-      "selectBoolFilterList": null
+      "selectHandler": "jsl-cash-flow:handlers/select-related/same-company"
     }
   }
 }

@@ -27,12 +27,10 @@
   },
   "selectDefs": {
     "providerContact": {
-      "selectHandler": "handlers/select-related/same-account",
-      "selectFieldHandler": null
+      "selectHandler": "jsl-cash-flow:handlers/select-related/same-company"
     },
     "clientContact": {
-      "selectHandler": "handlers/select-related/same-account",
-      "selectFieldHandler": null
+      "selectHandler": "jsl-cash-flow:handlers/select-related/same-company"
     }
   },
   "indexes": {
