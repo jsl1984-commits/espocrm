@@ -1,0 +1,9 @@
+{
+  "controller": "controllers/record",
+  "recordViews": {
+    "detail": "views/record/detail",
+    "edit": "views/record/edit"
+  },
+  "boolFilterList": ["onlyMy"],
+  "additionalLayouts": {}
+}

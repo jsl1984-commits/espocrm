@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "name": {"type": "varchar"},
+    "yearMonth": {"type": "varchar", "maxLength": 7},
+    "purchaseVat": {"type": "currency"},
+    "salesVat": {"type": "currency"},
+    "difference": {"type": "currency"},
+    "paymentDate": {"type": "date"},
+    "environment": {"type": "enum", "options": ["Production"], "default": "Production"},
+    "scenario": {"type": "enum", "options": ["Real","Realistic"], "default": "Realistic"}
+  },
+  "links": {
+    "movements": {"type": "hasMany", "entity": "JslFinancialMovement", "foreign": "consolidatedTax"}
+  }
+}

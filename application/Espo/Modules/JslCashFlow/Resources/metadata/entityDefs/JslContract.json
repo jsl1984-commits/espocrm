@@ -1,0 +1,31 @@
+{
+  "fields": {
+    "name": {"type": "varchar", "required": true},
+    "holdingCompany": {"type": "link", "entity": "Account"},
+    "providerCompany": {"type": "link", "entity": "Account"},
+    "providerContact": {"type": "link", "entity": "Contact"},
+    "clientCompany": {"type": "link", "entity": "Account"},
+    "clientContact": {"type": "link", "entity": "Contact"},
+    "milestoneCount": {"type": "int", "default": 1, "min": 1},
+    "frequency": {"type": "enum", "options": ["Monthly","Bimonthly","Quarterly","Semiannual","Annual","Custom"], "default": "Monthly"},
+    "customFrequencyDays": {"type": "int", "min": 1},
+    "startDate": {"type": "date", "required": true},
+    "endDate": {"type": "date"},
+    "netAmountPerMilestone": {"type": "currency"},
+    "taxType": {"type": "enum", "options": ["None","VAT","Fee14_5","Fee16"], "default": "VAT"},
+    "taxRate": {"type": "float"},
+    "paymentTerm": {"type": "enum", "options": ["Cash","30","45","60","90","Custom"], "default": "30"},
+    "paymentTermDays": {"type": "int", "min": 1},
+    "useFactoring": {"type": "bool", "default": false},
+    "invoiceDate": {"type": "date"},
+    "paymentDate": {"type": "date"},
+    "environment": {"type": "enum", "options": ["Production","Staging"], "default": "Production"},
+    "scenario": {"type": "enum", "options": ["Real","Pessimistic","Realistic","Optimistic","Cloned from Production"], "default": "Real"}
+  },
+  "links": {
+    "financialMovements": {"type": "hasMany", "entity": "JslFinancialMovement", "foreign": "contract"}
+  },
+  "indexes": {
+    "startDate": {"columns": ["startDate","deleted"]}
+  }
+}

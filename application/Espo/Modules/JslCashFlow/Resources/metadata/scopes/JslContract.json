@@ -1,0 +1,8 @@
+{
+  "module": "JslCashFlow",
+  "entity": true,
+  "acl": true,
+  "stream": true,
+  "layoutAvailabilityList": ["list", "detail", "edit", "search"],
+  "type": "Base"
+}

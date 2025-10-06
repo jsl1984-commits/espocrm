@@ -1,0 +1,43 @@
+{
+  "scopeNames": {
+    "JslContract": "JSL Contract",
+    "JslFinancialMovement": "JSL Financial Movement",
+    "JslSalary": "JSL Salary",
+    "JslConsolidatedTax": "JSL Consolidated Tax"
+  },
+  "labels": {
+    "Create JslContract": "Create JSL Contract",
+    "Create JslFinancialMovement": "Create JSL Financial Movement",
+    "Create JslSalary": "Create JSL Salary",
+    "Create JslConsolidatedTax": "Create JSL Consolidated Tax"
+  },
+  "fields": {
+    "holdingCompany": "Holding Company",
+    "providerCompany": "Provider Company",
+    "providerContact": "Provider Contact",
+    "clientCompany": "Client Company",
+    "clientContact": "Client Contact",
+    "milestoneCount": "Milestone Count",
+    "frequency": "Frequency",
+    "customFrequencyDays": "Custom Frequency (days)",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "netAmountPerMilestone": "Net Amount per Milestone",
+    "taxType": "Tax Type",
+    "taxRate": "Tax Rate",
+    "paymentTerm": "Payment Term",
+    "paymentTermDays": "Payment Term Days",
+    "useFactoring": "Use Factoring",
+    "invoiceDate": "Invoice Date",
+    "paymentDate": "Payment Date",
+    "environment": "Environment",
+    "scenario": "Scenario",
+
+    "sourceCompany": "Source Company",
+    "targetCompany": "Target Company",
+    "type": "Movement Type",
+    "netAmount": "Net Amount",
+    "taxAmount": "Tax Amount",
+    "amount": "Amount"
+  }
+}
