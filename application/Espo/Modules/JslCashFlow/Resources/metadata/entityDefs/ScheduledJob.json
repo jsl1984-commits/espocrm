@@ -1,0 +1,12 @@
+{
+  "jobSchedulingMap": {
+    "JslCashFlow:GenerateMonthlyVat": "0 2 1 * *"
+  },
+  "jobs": {
+    "JslCashFlow:GenerateMonthlyVat": {
+      "name": "Generate Monthly VAT (JSL)",
+      "isSystem": false,
+      "scheduling": "0 2 1 * *"
+    }
+  }
+}

@@ -25,6 +25,16 @@
   "links": {
     "financialMovements": {"type": "hasMany", "entity": "JslFinancialMovement", "foreign": "contract"}
   },
+  "selectDefs": {
+    "providerContact": {
+      "selectHandler": "handlers/select-related/same-account",
+      "selectFieldHandler": null
+    },
+    "clientContact": {
+      "selectHandler": "handlers/select-related/same-account",
+      "selectFieldHandler": null
+    }
+  },
   "indexes": {
     "startDate": {"columns": ["startDate","deleted"]}
   }

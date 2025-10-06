@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "vatRate": {"type": "float", "default": 0.19},
+    "feeRate2025": {"type": "float", "default": 0.145},
+    "feeRate2026": {"type": "float", "default": 0.16},
+    "payrollContributionRate": {"type": "float", "default": 0.35},
+    "payrollContributionDay": {"type": "int", "default": 12},
+    "vatPaymentDay": {"type": "int", "default": 20}
+  }
+}
