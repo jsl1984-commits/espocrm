@@ -1,0 +1,31 @@
+{
+  "fields": {
+    "name": {"type": "varchar"},
+    "contract": {"type": "link", "entity": "JslContract"},
+    "salary": {"type": "link", "entity": "JslSalary"},
+    "sourceCompany": {"type": "link", "entity": "Account"},
+    "targetCompany": {"type": "link", "entity": "Account"},
+    "type": {"type": "enum", "options": [
+      "InvoiceTaxed","Honorar","Invoice","Credit","InvoiceExempt","Check","Agreement",
+      "CreditTaxed","CreditExempt",
+      "Salary","Bonus","Severance","Reimbursement"
+    ]},
+    "netAmount": {"type": "currency"},
+    "taxAmount": {"type": "currency"},
+    "amount": {"type": "currency"},
+    "taxRate": {"type": "float"},
+    "invoiceDate": {"type": "date"},
+    "paymentDate": {"type": "date"},
+    "useFactoring": {"type": "bool", "default": false},
+    "environment": {"type": "enum", "options": ["Production","Staging"], "default": "Production"},
+    "scenario": {"type": "enum", "options": ["Real","Pessimistic","Realistic","Optimistic","Cloned from Production"], "default": "Real"}
+  },
+  "links": {
+    "contract": {"type": "belongsTo", "entity": "JslContract"},
+    "salary": {"type": "belongsTo", "entity": "JslSalary"}
+  },
+  "indexes": {
+    "paymentDate": {"columns": ["paymentDate","deleted"]},
+    "invoiceDate": {"columns": ["invoiceDate","deleted"]}
+  }
+}

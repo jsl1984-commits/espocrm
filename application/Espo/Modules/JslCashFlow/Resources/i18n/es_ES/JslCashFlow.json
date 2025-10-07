@@ -1,0 +1,43 @@
+{
+  "scopeNames": {
+    "JslContract": "JSL Contrato",
+    "JslFinancialMovement": "JSL Movimiento Financiero",
+    "JslSalary": "JSL Salario",
+    "JslConsolidatedTax": "JSL IVA Consolidado"
+  },
+  "labels": {
+    "Create JslContract": "Crear JSL Contrato",
+    "Create JslFinancialMovement": "Crear JSL Movimiento Financiero",
+    "Create JslSalary": "Crear JSL Salario",
+    "Create JslConsolidatedTax": "Crear JSL IVA Consolidado"
+  },
+  "fields": {
+    "holdingCompany": "Empresa del Holding",
+    "providerCompany": "Empresa Proveedor",
+    "providerContact": "Contacto Proveedor",
+    "clientCompany": "Empresa Cliente",
+    "clientContact": "Contacto Cliente",
+    "milestoneCount": "Cantidad de Hitos",
+    "frequency": "Frecuencia",
+    "customFrequencyDays": "Frecuencia Custom (días)",
+    "startDate": "Fecha Inicio",
+    "endDate": "Fecha Término",
+    "netAmountPerMilestone": "Valor Neto por Hito",
+    "taxType": "Tipo de Impuesto",
+    "taxRate": "Tasa de Impuesto",
+    "paymentTerm": "Condición de Pago",
+    "paymentTermDays": "Días Condición de Pago",
+    "useFactoring": "Usa Factoring",
+    "invoiceDate": "Fecha de Emisión",
+    "paymentDate": "Fecha de Pago",
+    "environment": "Ambiente",
+    "scenario": "Escenario",
+
+    "sourceCompany": "Origen",
+    "targetCompany": "Destino",
+    "type": "Tipo de Movimiento",
+    "netAmount": "Monto Neto",
+    "taxAmount": "Monto Impuesto",
+    "amount": "Monto"
+  }
+}

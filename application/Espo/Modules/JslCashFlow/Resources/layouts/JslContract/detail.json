@@ -1,0 +1,11 @@
+[
+  {"rows": [[{"name":"name"}],
+             [{"name":"holdingCompany"},{"name":"providerCompany"},{"name":"clientCompany"}],
+             [{"name":"providerContact"},{"name":"clientContact"}]]},
+  {"rows": [[{"name":"milestoneCount"},{"name":"frequency"},{"name":"customFrequencyDays"}],
+             [{"name":"startDate"},{"name":"endDate"}],
+             [{"name":"netAmountPerMilestone"},{"name":"taxType"},{"name":"taxRate"}],
+             [{"name":"paymentTerm"},{"name":"paymentTermDays"},{"name":"useFactoring"}],
+             [{"name":"invoiceDate"},{"name":"paymentDate"}],
+             [{"name":"environment"},{"name":"scenario"}]]}
+]

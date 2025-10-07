@@ -1,0 +1,12 @@
+{
+  "controller": "controllers/record",
+  "recordViews": {"detail": "views/record/detail", "edit": "views/record/edit"},
+  "relationshipPanels": {
+    "providerContact": {
+      "selectHandler": "jsl-cash-flow:handlers/select-related/same-company"
+    },
+    "clientContact": {
+      "selectHandler": "jsl-cash-flow:handlers/select-related/same-company"
+    }
+  }
+}

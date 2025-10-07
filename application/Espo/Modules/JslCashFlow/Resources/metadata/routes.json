@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "JslCashFlowGenerateVat": {
+      "method": "POST",
+      "path": "/JslConsolidatedTax/action/generateVat",
+      "controller": "JslConsolidatedTax",
+      "action": "generateVat"
+    }
+  }
+}

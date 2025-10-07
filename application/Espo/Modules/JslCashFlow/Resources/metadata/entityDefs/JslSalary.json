@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "name": {"type": "varchar", "required": true},
+    "company": {"type": "link", "entity": "Account", "required": true},
+    "contact": {"type": "link", "entity": "Contact", "required": true},
+    "hireDate": {"type": "date", "required": true},
+    "area": {"type": "enum", "options": ["Engineering","Outsourcing","Sales"], "default": "Engineering"},
+    "netSalary": {"type": "currency", "required": true},
+    "payDay": {"type": "enum", "options": ["5","10","15","20","25","LastBusinessDay"], "default": "25"},
+    "periodsForward": {"type": "int", "default": 12}
+  },
+  "links": {
+    "financialMovements": {"type": "hasMany", "entity": "JslFinancialMovement", "foreign": "salary"}
+  }
+}
