@@ -1,0 +1,7 @@
+{
+  "vis-network": {
+    "path": "client/custom/lib/vis-network.min.js",
+    "exportsTo": "window",
+    "exportsAs": "vis"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "JslCMDB",
+  "version": "1.0.1",
+  "description": "JSLCMBD module: JSLCi entity, Account panels, vis-network graph with filters/export",
+  "acceptableVersions": ">=9.1.0",
+  "releaseDate": "2025-10-07",
+  "author": "JSL",
+  "copy": [
+    {"from": "custom/Espo/Modules/Jsl", "to": "custom/Espo/Modules/Jsl"},
+    {"from": "client/custom/modules/jsl", "to": "client/custom/modules/jsl"},
+    {"from": "client/custom/lib/vis-network.min.js", "to": "client/custom/lib/vis-network.min.js"}
+  ],
+  "delete": [],
+  "scripts": {"before": [], "after": []}
+}
+

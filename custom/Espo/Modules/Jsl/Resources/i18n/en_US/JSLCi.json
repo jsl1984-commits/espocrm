@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "name": "Name",
+    "type": "Type",
+    "status": "Status",
+    "environment": "Environment",
+    "description": "Description",
+    "account": "Account",
+    "owner": "Owner",
+    "parent": "Parent"
+  },
+  "links": {
+    "account": "Account",
+    "owner": "Owner",
+    "parent": "Parent",
+    "children": "Children",
+    "relatedCis": "Related CIs"
+  },
+  "labels": {
+    "Create JSLCi": "Create CI",
+    "JSLCi": "Configuration Item",
+    "JSLCis": "Configuration Items"
+  }
+}
