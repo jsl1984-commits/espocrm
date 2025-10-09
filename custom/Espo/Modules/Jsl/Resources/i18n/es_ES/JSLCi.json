@@ -1,0 +1,24 @@
+{
+  "fields": {
+    "name": "Nombre",
+    "type": "Tipo",
+    "status": "Estado",
+    "environment": "Ambiente",
+    "description": "Descripción",
+    "account": "Cuenta",
+    "owner": "Propietario",
+    "parent": "Padre"
+  },
+  "links": {
+    "account": "Cuenta",
+    "owner": "Propietario",
+    "parent": "Padre",
+    "children": "Hijos",
+    "relatedCis": "CIs relacionados"
+  },
+  "labels": {
+    "Create JSLCi": "Crear CI",
+    "JSLCi": "Elemento de Configuración",
+    "JSLCis": "Elementos de Configuración"
+  }
+}

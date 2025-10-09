@@ -1,0 +1,13 @@
+{
+  "relationshipPanels": {
+    "jslCis": {
+      "layout": "list",
+      "order": 6
+    }
+  },
+  "bottomPanels": {
+    "detail": [
+      { "name": "jslCmdbGraph", "label": "CMDB Graph", "view": "jsl:views/account/panels/jsl-cmdb-graph", "order": 3 }
+    ]
+  }
+}

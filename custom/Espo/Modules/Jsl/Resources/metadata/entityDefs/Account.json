@@ -1,0 +1,9 @@
+{
+  "links": {
+    "jslCis": {
+      "type": "hasMany",
+      "entity": "JSLCi",
+      "foreign": "account"
+    }
+  }
+}

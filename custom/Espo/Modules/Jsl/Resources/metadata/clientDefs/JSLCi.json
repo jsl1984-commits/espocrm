@@ -1,0 +1,9 @@
+{
+  "controller": "controllers/record",
+  "views": {
+    "detail": "views/record/detail",
+    "list": "views/record/list"
+  },
+  "color": "#2b90d9",
+  "iconClass": "fas fa-diagram-project"
+}

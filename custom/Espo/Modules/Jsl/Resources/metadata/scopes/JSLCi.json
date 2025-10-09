@@ -1,0 +1,14 @@
+{
+  "entity": true,
+  "layouts": true,
+  "tab": true,
+  "acl": true,
+  "module": "Jsl",
+  "customizable": true,
+  "stream": true,
+  "notifications": true,
+  "object": true,
+  "type": "Base",
+  "color": "#2b90d9",
+  "iconClass": "fas fa-diagram-project"
+}

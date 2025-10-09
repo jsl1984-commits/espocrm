@@ -1,0 +1,8 @@
+[
+  {"rows": [[{"name": "name"}, {"name": "status"}]]},
+  {"rows": [[{"name": "type"}, {"name": "environment"}]]},
+  {"rows": [[{"name": "account"}, {"name": "assignedUser"}]]},
+  {"rows": [[{"name": "teams"}]]},
+  {"rows": [[{"name": "parent"}]]},
+  {"rows": [[{"name": "description", "fullWidth": true}]]}
+]

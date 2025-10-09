@@ -1,0 +1,8 @@
+{
+  "labels": {
+    "CMDB Graph": "Gráfico CMDB"
+  },
+  "panels": {
+    "jslCmdbGraph": "Gráfico CMDB"
+  }
+}
