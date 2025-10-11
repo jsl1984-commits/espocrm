@@ -1,0 +1,11 @@
+{
+  "entity": true,
+  "object": true,
+  "layouts": true,
+  "customizable": true,
+  "acl": true,
+  "importable": true,
+  "label": "Movimientos Financieros",
+  "controller": "Record",
+  "iconClass": "fas fa-exchange-alt"
+}

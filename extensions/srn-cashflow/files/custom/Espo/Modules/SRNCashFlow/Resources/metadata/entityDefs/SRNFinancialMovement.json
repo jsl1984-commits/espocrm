@@ -1,0 +1,49 @@
+{
+  "table": "srn_financial_movement",
+  "fields": {
+    "contractId": { "type": "foreignId" },
+    "salaryId": { "type": "foreignId" },
+    "employeeId": { "type": "foreignId" },
+    "movementType": {
+      "type": "enum",
+      "options": [
+        "Expense:Invoice:VAT19",
+        "Expense:Invoice:Exempt",
+        "Expense:Honorarium:14.5",
+        "Expense:Invoice:NoVAT",
+        "Expense:Salary:Previsional",
+        "Expense:TaxSettle",
+        "Expense:CreditNote:VAT19",
+        "Expense:CreditNote:Exempt",
+        "Income:Invoice:VAT19",
+        "Income:Invoice:Exempt",
+        "Income:DebitNote:VAT19",
+        "Income:DebitNote:Exempt",
+        "Absence"
+      ],
+      "required": true
+    },
+    "amountNet": { "type": "currency", "required": true },
+    "amountTax": { "type": "currency" },
+    "amountGross": { "type": "currency" },
+    "rate": { "type": "float" },
+    "vatImpactNextMonth": { "type": "bool", "default": false },
+    "dueDate": { "type": "date" },
+    "period": { "type": "varchar" },
+    "environment": { "type": "enum", "options": ["Production","Staging"], "default": "Production" },
+    "scenario": { "type": "enum", "options": ["Real","Conservative","Realistic","Optimistic"], "default": "Real" },
+    "status": { "type": "enum", "options": ["Draft","Confirmed","Paid"], "default": "Draft" },
+    "reason": { "type": "varchar" }
+  },
+  "links": {
+    "contract": { "type": "belongsTo", "entity": "SRNContract", "foreignKey": "contractId" },
+    "salary": { "type": "belongsTo", "entity": "SRNSalary", "foreignKey": "salaryId" },
+    "employee": { "type": "belongsTo", "entity": "SRNEmployee", "foreignKey": "employeeId" }
+  },
+  "indexes": {
+    "IDX_CONTRACT": { "columns": ["contractId"] },
+    "IDX_SALARY": { "columns": ["salaryId"] },
+    "IDX_EMPLOYEE": { "columns": ["employeeId"] },
+    "IDX_STATUS": { "columns": ["status"] }
+  }
+}
