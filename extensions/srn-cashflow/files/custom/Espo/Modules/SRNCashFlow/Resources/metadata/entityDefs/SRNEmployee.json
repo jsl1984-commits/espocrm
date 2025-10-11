@@ -1,0 +1,16 @@
+{
+  "table": "srn_employee",
+  "fields": {
+    "firstName": { "type": "varchar", "required": true, "len": 100 },
+    "lastName": { "type": "varchar", "required": true, "len": 100 },
+    "hireDate": { "type": "date", "required": true },
+    "status": { "type": "enum", "options": ["Activo","Inactivo"], "default": "Activo" }
+  },
+  "links": {
+    "salaries": { "type": "hasMany", "entity": "SRNSalary", "foreign": "employee" },
+    "financialMovements": { "type": "hasMany", "entity": "SRNFinancialMovement", "foreign": "employee" }
+  },
+  "indexes": {
+    "IDX_STATUS": { "columns": ["status"] }
+  }
+}

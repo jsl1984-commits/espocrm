@@ -1,0 +1,15 @@
+[
+  {
+    "rows": [
+      [{"name":"name"},{"name":"status"}],
+      [{"name":"contractType"},{"name":"startDate"}],
+      [{"name":"expirationDate"},{"name":"renewalDate"}],
+      [{"name":"company1"},{"name":"contact1"}],
+      [{"name":"company2"},{"name":"contact2"}],
+      [{"name":"paymentTerms"},{"name":"billingCycleType"}],
+      [{"name":"settlementType"},{"name":"customPaymentDays"}],
+      [{"name":"usesFactoring"},{"name":"factoringDate"}],
+      [{"name":"observations","span":2}]
+    ]
+  }
+]

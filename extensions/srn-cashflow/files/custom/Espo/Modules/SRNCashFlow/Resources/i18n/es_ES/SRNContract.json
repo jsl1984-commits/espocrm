@@ -1,0 +1,37 @@
+{
+  "fields": {
+    "name": "Nombre",
+    "company1": "Empresa que provee",
+    "company2": "Empresa que recibe",
+    "contact1": "Contacto proveedor",
+    "contact2": "Contacto receptor",
+    "startDate": "Fecha inicio",
+    "expirationDate": "Fecha vencimiento",
+    "renewalDate": "Fecha renovación",
+    "contractType": "Tipo contrato",
+    "status": "Estado",
+    "paymentTerms": "Términos de pago",
+    "billingCycleType": "Ciclo facturación",
+    "settlementType": "Tipo liquidación",
+    "customPaymentDays": "Días pago custom",
+    "usesFactoring": "Usa factoring",
+    "factoringDate": "Fecha factoring",
+    "observations": "Observaciones"
+  },
+  "options": {
+    "status": {
+      "Borrador": "Borrador",
+      "Activo": "Activo",
+      "Suspendido": "Suspendido",
+      "Finalizado": "Finalizado",
+      "Rescindido": "Rescindido",
+      "Expirado": "Expirado"
+    },
+    "contractType": {
+      "Venta": "Venta",
+      "Compra": "Compra",
+      "Interno": "Interno",
+      "Indefinido": "Indefinido"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "menu": {
+    "SRNCashFlowSettings": {
+      "label": "SRN CashFlow",
+      "acl": "admin",
+      "view": "views/admin/configuration-record",
+      "params": { "scope": "SRNCashFlow" },
+      "order": 520
+    }
+  }
+}

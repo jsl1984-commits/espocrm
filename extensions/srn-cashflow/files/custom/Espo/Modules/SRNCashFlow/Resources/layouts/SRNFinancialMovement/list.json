@@ -1,0 +1,11 @@
+[
+  "movementType",
+  "contract",
+  "employee",
+  "salary",
+  "amountNet",
+  "amountTax",
+  "amountGross",
+  "dueDate",
+  "status"
+]

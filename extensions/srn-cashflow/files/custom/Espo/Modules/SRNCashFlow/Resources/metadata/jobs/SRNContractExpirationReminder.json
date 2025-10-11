@@ -1,0 +1,7 @@
+{
+  "name": "SRN Contract Expiration Reminder",
+  "job": "Espo\\Modules\\SRNCashFlow\\Jobs\\SRNContractExpirationReminder",
+  "scheduling": "0 7 * * *",
+  "status": "Active",
+  "isInternal": false
+}

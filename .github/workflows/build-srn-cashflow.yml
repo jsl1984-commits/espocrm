@@ -1,0 +1,23 @@
+name: build-srn-cashflow
+
+on:
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'extensions/srn-cashflow/**'
+      - 'scripts/package-srn-cashflow.sh'
+      - '.github/workflows/build-srn-cashflow.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build SRN CashFlow package
+        run: bash scripts/package-srn-cashflow.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: srn-cashflow-zip
+          path: dist/*.zip

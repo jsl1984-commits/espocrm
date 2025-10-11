@@ -1,0 +1,8 @@
+{
+  "controller": "Record",
+  "iconClass": "fas fa-file-contract",
+  "fields": {
+    "contact1": { "view": "srn:views/fields/srn-contact1" },
+    "contact2": { "view": "srn:views/fields/srn-contact2" }
+  }
+}

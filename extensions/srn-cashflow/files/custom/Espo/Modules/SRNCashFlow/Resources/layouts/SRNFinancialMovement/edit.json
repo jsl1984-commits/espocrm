@@ -1,0 +1,17 @@
+[
+  { "name": "movementType" },
+  { "name": "contract" },
+  { "name": "employee" },
+  { "name": "salary" },
+  { "name": "amountNet" },
+  { "name": "amountTax" },
+  { "name": "amountGross" },
+  { "name": "rate" },
+  { "name": "vatImpactNextMonth" },
+  { "name": "dueDate" },
+  { "name": "period" },
+  { "name": "environment" },
+  { "name": "scenario" },
+  { "name": "status" },
+  { "name": "reason" }
+]
